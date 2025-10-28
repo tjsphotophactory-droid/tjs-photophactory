@@ -12,3 +12,12 @@ git add.
 git commit -m "Initial commit"
 git branch -M main
 git push -u origin main
+{
+  "version": 2,
+  "builds": [
+    { "src": "package.json", "use": "@vercel/static-build", "config": { "distDir": "build" } }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}
