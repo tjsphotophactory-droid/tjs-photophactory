@@ -5,3 +5,10 @@ git commit -m "Initial commit for Tj's Photophactory website"
 git branch -M main
 git remote add origin https://github.com/<username>/tjs-photophactory.git
 git push -u origin main
+git add.
+git commit -m "Fix vercel routing"
+git push
+git add.
+git commit -m "Initial commit"
+git branch -M main
+git push -u origin main
