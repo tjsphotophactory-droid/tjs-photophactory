@@ -9,7 +9,6 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "build": "react-scripts build",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.16.0",
