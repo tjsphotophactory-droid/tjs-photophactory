@@ -21,3 +21,10 @@ git push -u origin main
     { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
+package.json
+package-lock.json
+src/
+...
+npm init -y
+npm ci
+npm run build
