@@ -4,7 +4,7 @@ export default function Pricing() {
   return (
     <div style={{ padding: "2rem", textAlign: "center" }}>
       <h1>Pricing</h1>
-      <p>Explore our photography session packages and rates below.</p>
+      <p>Explore our photography packages and rates below.</p>
 
       <div style={{ maxWidth: "500px", margin: "2rem auto", textAlign: "left" }}>
         <h3>Portrait Photography</h3>
