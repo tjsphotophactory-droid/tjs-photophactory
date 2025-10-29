@@ -1,4 +1,5 @@
-README.md
-package.json
-src/
-public/
+client/
+ ┣ package.json
+ ┣ src/
+ ┣ public/
+
