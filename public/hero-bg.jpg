@@ -1,0 +1,8 @@
+<div
+  className="hero"
+  style={{
+    backgroundImage: "url('/hero-bg.jpg')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  }}
+>
