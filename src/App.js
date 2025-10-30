@@ -110,11 +110,26 @@ import "./App.css";
 
 function Gallery() {
   const images = [
-    "/images/photo1.jpg",
-    "/images/photo2.jpg",
-    "/images/photo3.jpg",
-    "/images/photo4.jpg",
-    "/images/photo5.jpg",
+    {
+      src: "/images/photo1.jpg",
+      caption: "Urban Dreams — Toronto Skyline",
+    },
+    {
+      src: "/images/photo2.jpg",
+      caption: "Golden Hour Portrait",
+    },
+    {
+      src: "/images/photo3.jpg",
+      caption: "Wedding Bliss — The Moment",
+    },
+    {
+      src: "/images/photo4.jpg",
+      caption: "Nature’s Whisper — Misty Forest",
+    },
+    {
+      src: "/images/photo5.jpg",
+      caption: "Studio Series — Bold Contrast",
+    },
   ];
 
   const [selectedIndex, setSelectedIndex] = useState(null);
@@ -149,11 +164,11 @@ function Gallery() {
     <section className="gallery" id="gallery">
       <h2>Gallery</h2>
       <div className="gallery-grid">
-        {images.map((src, index) => (
+        {images.map((image, index) => (
           <img
             key={index}
-            src={src}
-            alt={`Gallery ${index + 1}`}
+            src={image.src}
+            alt={image.caption}
             onClick={() => openLightbox(index)}
           />
         ))}
@@ -165,7 +180,11 @@ function Gallery() {
             <span className="close" onClick={closeLightbox}>
               &times;
             </span>
-            <img src={images[selectedIndex]} alt="Enlarged" />
+            <img
+              src={images[selectedIndex].src}
+              alt={images[selectedIndex].caption}
+            />
+            <p className="caption">{images[selectedIndex].caption}</p>
             <button className="nav prev" onClick={showPrev}>
               &#10094;
             </button>
@@ -180,6 +199,7 @@ function Gallery() {
 }
 
 export default Gallery;
+
 
 
 {/* 📬 Contact Section */}
