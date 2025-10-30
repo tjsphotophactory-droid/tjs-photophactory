@@ -126,15 +126,18 @@ nav a:hover {
 }
 
 {/* 📬 Contact Section */}
-<section className="contact" id="contact">
-  <h2>Contact Me</h2>
-  <form action="xblprqlr" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="email" placeholder="Your Email" required />
-    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-    <button type="submit">Send Message</button>
+<section className="contact">
+  <h2>Contact Us</h2>
+  <form className="contact-form">
+    <input type="text" placeholder="Your Name" required />
+    <input type="email" placeholder="Your Email" required />
+    <textarea placeholder="Your Message" required></textarea>
+    <button type="submit" className="cta-btn contact-btn">
+      Send Message
+    </button>
   </form>
 </section>
+
 
 /* 🧾 Footer */
 footer {
