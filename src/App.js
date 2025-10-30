@@ -99,31 +99,54 @@ nav a:hover {
   z-index: 1;
 }
 
-.hero button:hover {
+.hero button: hover {
   background: #fff;
   color: #000;
 }
 
 /* 📸 Gallery Section */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  padding: 3rem 2rem;
+import React, { useState } from "react";
+import "./App.css";
+
+function Gallery() {
+  const images = [
+    "/images/photo1.jpg",
+    "/images/photo2.jpg",
+    "/images/photo3.jpg",
+    "/images/photo4.jpg",
+    "/images/photo5.jpg",
+  ];
+
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  return (
+    <section className="gallery" id="gallery">
+      <h2>Gallery</h2>
+      <div className="gallery-grid">
+        {images.map((src, index) => (
+          <img
+            key={index}
+            src={src}
+            alt={`Gallery ${index + 1}`}
+            onClick={() => setSelectedImage(src)}
+          />
+        ))}
+      </div>
+
+      {selectedImage && (
+        <div className="lightbox" onClick={() => setSelectedImage(null)}>
+          <div className="lightbox-content">
+            <img src={selectedImage} alt="Enlarged" />
+            <span className="close">&times;</span>
+          </div>
+        </div>
+      )}
+    </section>
+  );
 }
 
-.gallery img {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-  border-radius: 10px;
-  transition: transform 0.4s ease, filter 0.4s ease;
-}
+export default Gallery;
 
-.gallery img:hover {
-  transform: scale(1.05);
-  filter: brightness(1.2);
-}
 
 {/* 📬 Contact Section */}
 <section className="contact">
