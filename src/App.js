@@ -105,7 +105,7 @@ nav a:hover {
 }
 
 /* 📸 Gallery Section */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 
 function Gallery() {
@@ -117,7 +117,33 @@ function Gallery() {
     "/images/photo5.jpg",
   ];
 
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedIndex, setSelectedIndex] = useState(null);
+
+  const openLightbox = (index) => setSelectedIndex(index);
+  const closeLightbox = () => setSelectedIndex(null);
+
+  const showNext = (e) => {
+    e?.stopPropagation();
+    setSelectedIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const showPrev = (e) => {
+    e?.stopPropagation();
+    setSelectedIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKey = (e) => {
+      if (selectedIndex !== null) {
+        if (e.key === "ArrowRight") showNext();
+        if (e.key === "ArrowLeft") showPrev();
+        if (e.key === "Escape") closeLightbox();
+      }
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [selectedIndex]);
 
   return (
     <section className="gallery" id="gallery">
@@ -128,16 +154,24 @@ function Gallery() {
             key={index}
             src={src}
             alt={`Gallery ${index + 1}`}
-            onClick={() => setSelectedImage(src)}
+            onClick={() => openLightbox(index)}
           />
         ))}
       </div>
 
-      {selectedImage && (
-        <div className="lightbox" onClick={() => setSelectedImage(null)}>
+      {selectedIndex !== null && (
+        <div className="lightbox" onClick={closeLightbox}>
           <div className="lightbox-content">
-            <img src={selectedImage} alt="Enlarged" />
-            <span className="close">&times;</span>
+            <span className="close" onClick={closeLightbox}>
+              &times;
+            </span>
+            <img src={images[selectedIndex]} alt="Enlarged" />
+            <button className="nav prev" onClick={showPrev}>
+              &#10094;
+            </button>
+            <button className="nav next" onClick={showNext}>
+              &#10095;
+            </button>
           </div>
         </div>
       )}
