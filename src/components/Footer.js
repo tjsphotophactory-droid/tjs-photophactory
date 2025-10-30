@@ -1,20 +1,15 @@
 import React from "react";
+import "./Footer.css";
 
-export default function Footer() {
+function Footer() {
   return (
-    <footer
-      style={{
-        backgroundColor: "#111",
-        color: "#fff",
-        textAlign: "center",
-        padding: "1rem",
-        marginTop: "2rem",
-      }}
-    >
-      <p>&copy; {new Date().getFullYear()} TJ’s PhotoPhactory. All rights reserved.</p>
-      <p style={{ fontSize: "0.9rem", opacity: 0.7 }}>
-        Crafted with ❤️ using React.
+    <footer className="site-footer">
+      <p>© {new Date().getFullYear()} TJ’s Photo Phactory. All rights reserved.</p>
+      <p className="socials">
+        <a href="#">Instagram</a> | <a href="#">Facebook</a> | <a href="#">Twitter</a>
       </p>
     </footer>
   );
 }
+
+export default Footer;
