@@ -15,3 +15,13 @@ function App() {
 }
 
 export default App;
+<div
+  className="hero"
+  style={{
+    backgroundImage: "url('/hero-bg.jpg')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  }}
+>
+  {/* hero content */}
+</div>
