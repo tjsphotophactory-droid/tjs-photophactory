@@ -19,7 +19,7 @@ a {
   transition: 0.3s ease;
 }
 
-a:hover {
+a: hover {
   color: #ffb400;
 }
 
@@ -47,7 +47,7 @@ nav a {
   font-weight: 500;
 }
 
-nav a:hover {
+nav a: hover {
   color: #fff;
 }
 
@@ -105,6 +105,7 @@ nav a:hover {
 }
 
 /* 📸 Gallery Section */
+
 import React, { useState, useEffect } from "react";
 import "./App.css";
 
