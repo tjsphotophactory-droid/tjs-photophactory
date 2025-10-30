@@ -125,6 +125,17 @@ nav a:hover {
   filter: brightness(1.2);
 }
 
+{/* 📬 Contact Section */}
+<section className="contact" id="contact">
+  <h2>Contact Me</h2>
+  <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
 /* 🧾 Footer */
 footer {
   background: #111;
