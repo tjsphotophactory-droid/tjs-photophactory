@@ -1,32 +1,139 @@
-import './App.css';
-import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Home from "./pages/Home";
-import Services from "./pages/Services";
-import Portfolio from "./pages/Portfolio";
-import Pricing from "./pages/Pricing";
-import Booking from "./pages/Booking";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-
-function App() {
-  return (
-    <Router>
-      <div className="App">
-        <Header />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/pricing" element={<Pricing />} />
-            <Route path="/booking" element={<Booking />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
-  );
+/* 🌐 Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-export default App;
+/* 🖤 Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0b0b0b;
+  color: #f5f5f5;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+a:hover {
+  color: #ffb400;
+}
+
+/* 🧭 Header */
+header {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  color: #ffb400;
+}
+
+nav a {
+  margin: 0 1rem;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+/* 🖼️ Hero Section */
+.hero {
+  background: url('/hero-bg.jpg') center/cover no-repeat;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  z-index: 1;
+  font-weight: 600;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  z-index: 1;
+}
+
+.hero button {
+  margin-top: 2rem;
+  padding: 0.75rem 2rem;
+  border: none;
+  background: #ffb400;
+  color: #111;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  z-index: 1;
+}
+
+.hero button:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* 📸 Gallery Section */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 3rem 2rem;
+}
+
+.gallery img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+/* 🧾 Footer */
+footer {
+  background: #111;
+  text-align: center;
+  padding: 1.5rem 0;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+footer span {
+  color: #ffb400;
+}
