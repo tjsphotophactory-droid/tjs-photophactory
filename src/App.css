@@ -148,7 +148,7 @@ footer span {
 .contact h2 {
   font-size: 2.2rem;
   margin-bottom: 30px;
-  color: #fff;
+  color: #FFD700;
   letter-spacing: 1px;
 }
 
@@ -164,16 +164,16 @@ footer span {
 .contact-form textarea {
   background: #000;
   border: 1px solid #444;
-  color: #fff;
+  color: #FFD700;
   padding: 14px 16px;
   border-radius: 8px;
   font-size: 1rem;
   transition: all 0.3s ease;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: #fff;
+.contact-form input: focus,
+.contact-form textarea: focus {
+  border-color: #FFD700;
   outline: none;
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
 }
@@ -198,7 +198,7 @@ footer span {
 
 .contact-btn:hover {
   background-color: #000;
-  color: #fff;
+  color: #FFD700;
   border: 2px solid #fff;
   transform: translateY(-2px);
 }
