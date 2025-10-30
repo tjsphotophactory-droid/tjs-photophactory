@@ -110,44 +110,40 @@ import "./App.css";
 
 function Gallery() {
   const images = [
-    {
-      src: "/images/photo1.jpg",
-      caption: "Urban Dreams — Toronto Skyline",
-    },
-    {
-      src: "/images/photo2.jpg",
-      caption: "Golden Hour Portrait",
-    },
-    {
-      src: "/images/photo3.jpg",
-      caption: "Wedding Bliss — The Moment",
-    },
-    {
-      src: "/images/photo4.jpg",
-      caption: "Nature’s Whisper — Misty Forest",
-    },
-    {
-      src: "/images/photo5.jpg",
-      caption: "Studio Series — Bold Contrast",
-    },
+    { src: "/images/photo1.jpg", caption: "Urban Dreams — Toronto Skyline" },
+    { src: "/images/photo2.jpg", caption: "Golden Hour Portrait" },
+    { src: "/images/photo3.jpg", caption: "Wedding Bliss — The Moment" },
+    { src: "/images/photo4.jpg", caption: "Nature’s Whisper — Misty Forest" },
+    { src: "/images/photo5.jpg", caption: "Studio Series — Bold Contrast" },
   ];
 
   const [selectedIndex, setSelectedIndex] = useState(null);
+  const [fade, setFade] = useState(false);
 
-  const openLightbox = (index) => setSelectedIndex(index);
+  const openLightbox = (index) => {
+    setSelectedIndex(index);
+    setFade(true);
+  };
   const closeLightbox = () => setSelectedIndex(null);
 
   const showNext = (e) => {
     e?.stopPropagation();
-    setSelectedIndex((prev) => (prev + 1) % images.length);
+    setFade(false);
+    setTimeout(() => {
+      setSelectedIndex((prev) => (prev + 1) % images.length);
+      setFade(true);
+    }, 150);
   };
 
   const showPrev = (e) => {
     e?.stopPropagation();
-    setSelectedIndex((prev) => (prev - 1 + images.length) % images.length);
+    setFade(false);
+    setTimeout(() => {
+      setSelectedIndex((prev) => (prev - 1 + images.length) % images.length);
+      setFade(true);
+    }, 150);
   };
 
-  // Keyboard navigation
   useEffect(() => {
     const handleKey = (e) => {
       if (selectedIndex !== null) {
@@ -180,11 +176,13 @@ function Gallery() {
             <span className="close" onClick={closeLightbox}>
               &times;
             </span>
-            <img
-              src={images[selectedIndex].src}
-              alt={images[selectedIndex].caption}
-            />
-            <p className="caption">{images[selectedIndex].caption}</p>
+            <div className={`fade-container ${fade ? "fade-in" : "fade-out"}`}>
+              <img
+                src={images[selectedIndex].src}
+                alt={images[selectedIndex].caption}
+              />
+              <p className="caption">{images[selectedIndex].caption}</p>
+            </div>
             <button className="nav prev" onClick={showPrev}>
               &#10094;
             </button>
@@ -199,6 +197,7 @@ function Gallery() {
 }
 
 export default Gallery;
+
 
 
 
