@@ -225,3 +225,45 @@ nav a: hover {
     opacity: 1;
   }
 }
+/* Lightbox Navigation Arrows */
+.lightbox .nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 3rem;
+  cursor: pointer;
+  padding: 0 20px;
+  transition: all 0.3s ease;
+  user-select: none;
+  z-index: 2100;
+}
+
+.lightbox .nav:hover {
+  color: #00ffc6; /* Accent highlight */
+  transform: translateY(-50%) scale(1.1);
+}
+
+.lightbox .prev {
+  left: -60px;
+}
+
+.lightbox .next {
+  right: -60px;
+}
+
+@media (max-width: 768px) {
+  .lightbox .nav {
+    font-size: 2.2rem;
+    left: 10px;
+    right: 10px;
+  }
+  .lightbox .prev {
+    left: 5px;
+  }
+  .lightbox .next {
+    right: 5px;
+  }
+}
