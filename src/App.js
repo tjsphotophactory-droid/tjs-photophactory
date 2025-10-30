@@ -106,98 +106,20 @@ nav a: hover {
 
 /* 📸 Gallery Section */
 
-import React, { useState, useEffect } from "react";
+import React from "react";
+import Gallery from "./Gallery";
 import "./App.css";
 
-function Gallery() {
-  const images = [
-    { src: "/images/photo1.jpg", caption: "Urban Dreams — Toronto Skyline" },
-    { src: "/images/photo2.jpg", caption: "Golden Hour Portrait" },
-    { src: "/images/photo3.jpg", caption: "Wedding Bliss — The Moment" },
-    { src: "/images/photo4.jpg", caption: "Nature’s Whisper — Misty Forest" },
-    { src: "/images/photo5.jpg", caption: "Studio Series — Bold Contrast" },
-  ];
-
-  const [selectedIndex, setSelectedIndex] = useState(null);
-  const [fade, setFade] = useState(false);
-
-  const openLightbox = (index) => {
-    setSelectedIndex(index);
-    setFade(true);
-  };
-  const closeLightbox = () => setSelectedIndex(null);
-
-  const showNext = (e) => {
-    e?.stopPropagation();
-    setFade(false);
-    setTimeout(() => {
-      setSelectedIndex((prev) => (prev + 1) % images.length);
-      setFade(true);
-    }, 150);
-  };
-
-  const showPrev = (e) => {
-    e?.stopPropagation();
-    setFade(false);
-    setTimeout(() => {
-      setSelectedIndex((prev) => (prev - 1 + images.length) % images.length);
-      setFade(true);
-    }, 150);
-  };
-
-  useEffect(() => {
-    const handleKey = (e) => {
-      if (selectedIndex !== null) {
-        if (e.key === "ArrowRight") showNext();
-        if (e.key === "ArrowLeft") showPrev();
-        if (e.key === "Escape") closeLightbox();
-      }
-    };
-    window.addEventListener("keydown", handleKey);
-    return () => window.removeEventListener("keydown", handleKey);
-  }, [selectedIndex]);
-
+function App() {
   return (
-    <section className="gallery" id="gallery">
-      <h2>Gallery</h2>
-      <div className="gallery-grid">
-        {images.map((image, index) => (
-          <img
-            key={index}
-            src={image.src}
-            alt={image.caption}
-            onClick={() => openLightbox(index)}
-          />
-        ))}
-      </div>
-
-      {selectedIndex !== null && (
-        <div className="lightbox" onClick={closeLightbox}>
-          <div className="lightbox-content">
-            <span className="close" onClick={closeLightbox}>
-              &times;
-            </span>
-            <div className={`fade-container ${fade ? "fade-in" : "fade-out"}`}>
-              <img
-                src={images[selectedIndex].src}
-                alt={images[selectedIndex].caption}
-              />
-              <p className="caption">{images[selectedIndex].caption}</p>
-            </div>
-            <button className="nav prev" onClick={showPrev}>
-              &#10094;
-            </button>
-            <button className="nav next" onClick={showNext}>
-              &#10095;
-            </button>
-          </div>
-        </div>
-      )}
-    </section>
+    <div className="App">
+      <Gallery />
+    </div>
   );
 }
 
-export default Gallery;
+export default App;
+
 
 
 
