@@ -25,5 +25,3 @@ export default App;
     height: '100vh',
   }}
 >
-  {/* Hero content here */}
-</div>
