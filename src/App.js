@@ -19,9 +19,11 @@ export default App;
   className="hero"
   style={{
     backgroundImage: "url('/hero-bg.jpg')",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    height: '100vh',
   }}
 >
-  {/* hero content */}
+  {/* Hero content here */}
 </div>
