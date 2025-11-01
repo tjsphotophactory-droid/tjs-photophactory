@@ -1,28 +1,30 @@
-/* App.css */
-
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: #000;
   color: #fff;
 }
 
 .hero {
-  background-image: url('../public/hero-bg.jpg');
+  background-image: url ('hero-bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.hero:hover {
-  filter: brightness(1.1);
-  transform: scale(1.02);
-  transition: all 0.3s ease-in-out;
+h1 {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 10px;
 }
 
-button:hover {
-  background-color: #fff;
-  color: #000;
-  transition: 0.3s;
+p {
+  color: #ccc;
+  font-size: 1.2rem;
 }
