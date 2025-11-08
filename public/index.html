@@ -1,13 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tj's Photophactory</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tj's Photophactory</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header">
+      <div class="logo">
+        <svg width="44" height="44" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" stroke="#D4AF37" fill="none" />
+          <rect x="3" y="7" width="18" height="10" rx="2" stroke="#D4AF37" fill="none" />
+          <circle cx="12" cy="12" r="2.6" stroke="#D4AF37" fill="none" />
+        </svg>
+        <div>
+          <h1>Tj's Photophactory</h1>
+          <p>Portrait & Headshot Photography</p>
+        </div>
+      </div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#booking" class="book-btn">Book a Session</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="section hero">
+    <div class="container">
+      <div class="hero-text">
+        <h2>Headshots and Portraits</h2>
+        <p>Studio-grade lighting, retouching, and direction — crafted for professionals and creatives alike.</p>
+        <div class="buttons">
+          <a href="#booking" class="btn-primary">Book a Session</a>
+          <a href="#portfolio" class="btn-secondary">View Portfolio</a>
+        </div>
+      </div>
+      <div class="hero-img">
+        <span>Hero portrait placeholder — replace with your hero image</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="section">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="grid">
+        <div class="card">Portrait Photography <button onclick="scrollToBooking('Portrait Photography')">Book</button></div>
+        <div class="card">Individual Photography <button onclick="scrollToBooking('Individual Photography')">Book</button></div>
+        <div class="card">Headshot Photography <button onclick="scrollToBooking('Headshot Photography')">Book</button></div>
+        <div class="card">Passport Photos <button onclick="scrollToBooking('Passport Photos')">Book</button></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="section dark">
+    <div class="container">
+      <h2>Portfolio</h2>
+      <div class="grid images">
+        <img src="portfolio/headshot1.jpg" alt="Headshot 1">
+        <img src="portfolio/headshot2.jpg" alt="Headshot 2">
+        <img src="portfolio/portrait1.jpg" alt="Portrait 1">
+        <img src="portfolio/portrait2.jpg" alt="Portrait 2">
+        <img src="portfolio/lifestyle1.jpg" alt="Lifestyle 1">
+        <img src="portfolio/lifestyle2.jpg" alt="Lifestyle 2">
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="section">
+    <div class="container">
+      <h2>Pricing</h2>
+      <div class="grid pricing">
+        <div class="price-card">
+          <img src="https://source.unsplash.com/featured/?portrait,studio" alt="">
+          <h3>Portrait Photography</h3>
+          <p>$150 — 1 hour and over<br>$65 — under 1 hour</p>
+          <small>Includes editing</small>
+        </div>
+        <div class="price-card">
+          <img src="https://source.unsplash.com/featured/?portrait,individual" alt="">
+          <h3>Individual Photography</h3>
+          <p>$55 — every 30 minutes</p>
+          <small>Includes editing</small>
+        </div>
+        <div class="price-card">
+          <img src="https://source.unsplash.com/featured/?headshot,professional" alt="">
+          <h3>Headshot Photography</h3>
+          <p>$100</p>
+          <small>Includes editing</small>
+        </div>
+        <div class="price-card">
+          <img src="https://source.unsplash.com/featured/?passport,photo" alt="">
+          <h3>Passport Photos</h3>
+          <p>$12</p>
+          <small>Includes printing</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking -->
+  <section id="booking" class="section dark">
+    <div class="container">
+      <h2>Booking</h2>
+      <form id="bookingForm">
+        <input type="text" name="name" placeholder="Name" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="tel" name="phone" placeholder="Phone" />
+        <select name="service" required>
+          <option value="">Select Service</option>
+          <option value="Portrait Photography">Portrait Photography</option>
+          <option value="Individual Photography">Individual Photography</option>
+          <option value="Headshot Photography">Headshot Photography</option>
+          <option value="Passport Photos">Passport Photos</option>
+        </select>
+        <input type="date" name="date" required />
+        <textarea name="message" placeholder="Message"></textarea>
+        <button type="submit" class="btn-primary">Submit Booking Request</button>
+        <p id="status"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer">
+      <p>© 2025 Tj's Photophactory — All rights reserved.</p>
+      <div class="socials">
+        <a href="https://www.instagram.com/tjs_photophactory/" target="_blank">📷 Instagram</a>
+        <a href="https://www.tiktok.com/@photo.phactory" target="_blank">🎥 TikTok</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>

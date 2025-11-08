@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: black;
+  color: #ddd;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 2rem;
+}
+
+header {
+  background: rgba(0,0,0,0.8);
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid #333;
+}
+
+header .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav a {
+  color: #ccc;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+header nav a:hover {
+  color: #f7c948;
+}
+
+.book-btn {
+  border: 1px solid #f7c948;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.dark {
+  background: #0a0a0a;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.grid.images img, .price-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-img {
+  flex: 1;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #333;
+  border-radius: 10px;
+}
+
+.btn-primary {
+  background: #f7c948;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.btn-secondary {
+  border: 1px solid #555;
+  padding: 10px 20px;
+  color: #ccc;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.card {
+  background: #111;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+form input, form select, form textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background: #111;
+  color: #ddd;
+}
+
+footer {
+  border-top: 1px solid #222;
+  padding: 2rem;
+  text-align: center;
+}
+
+footer .socials a {
+  margin: 0 10px;
+  color: #f7c948;
+  text-decoration: none;
+}
